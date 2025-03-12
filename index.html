@@ -14,7 +14,7 @@
   <header class="aia-header">
     <nav class="aia-nav">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/AIA_Group_logo.svg/1200px-AIA_Group_logo.svg.png" alt="AIA Logo" class="nav-logo">
-      <a href="#contact" class="nav-cta">立即諮詢</a>
+      <a href="http://wa.me/85267188956" class="nav-cta">立即撥打</a>
     </nav>
   </header>
 
@@ -24,9 +24,11 @@
     <div class="hero-content">
       <h1 class="hero-title">
         <span class="typed-text">為您的財富保駕護航</span>
+        <br>
+        <span class="typed-text">專業理財，成就未來</span>
       </h1>
       <p class="hero-subtitle">退休規劃 | 稅務策略 | 家族信託 | 風險管理</p>
-      <a href="#services" class="hero-cta">探索服務</a>
+      <a href="#contact" class="hero-cta">免費諮詢</a>
     </div>
     <div class="hero-icons">
       <i class="fas fa-chart-line"></i>
@@ -48,25 +50,25 @@
           <i class="fas fa-chart-line service-icon"></i>
           <h3>稅務高效規劃</h3>
           <p>合法節省高達 30% 稅務支出，資產配置全球化</p>
-          <a href="#" class="service-link">了解更多 →</a>
+          <a href="#contact" class="service-link">立即諮詢 →</a>
         </div>
         <div class="service-card">
           <i class="fas fa-coins service-icon"></i>
           <h3>退休金規劃</h3>
           <p>穩健投資策略，確保退休生活無憂</p>
-          <a href="#" class="service-link">了解更多 →</a>
+          <a href="#contact" class="service-link">立即諮詢 →</a>
         </div>
         <div class="service-card">
           <i class="fas fa-shield-alt service-icon"></i>
           <h3>風險管理</h3>
           <p>全面保障計劃，守護您與家人的未來</p>
-          <a href="#" class="service-link">了解更多 →</a>
+          <a href="#contact" class="service-link">立即諮詢 →</a>
         </div>
         <div class="service-card">
           <i class="fas fa-graduation-cap service-icon"></i>
           <h3>教育基金</h3>
           <p>為子女未來教育提供充足資金保障</p>
-          <a href="#" class="service-link">了解更多 →</a>
+          <a href="#contact" class="service-link">立即諮詢 →</a>
         </div>
       </div>
     </section>
@@ -96,15 +98,8 @@
       <form class="consultation-form">
         <input type="text" placeholder="姓名" required>
         <input type="tel" placeholder="電話" required>
-        <input type="email" placeholder="電郵" required>
-        <select required>
-          <option value="">選擇服務類別</option>
-          <option value="tax">稅務規劃</option>
-          <option value="retirement">退休規劃</option>
-          <option value="education">教育基金</option>
-          <option value="protection">風險管理</option>
-        </select>
         <button type="submit">提交預約</button>
+        <p class="form-note">您的信息將嚴格保密</p>
       </form>
     </section>
   </main>
@@ -147,6 +142,20 @@
           behavior: 'smooth'
         });
       });
+    });
+
+    // 數字滾動效果
+    const counters = document.querySelectorAll('.data-number');
+    counters.forEach(counter => {
+      const target = +counter.innerText.replace(/,/g, '');
+      const increment = target / 100;
+      let current = 0;
+      const updateCounter = () => {
+        current += increment;
+        counter.innerText = Math.floor(current).toLocaleString();
+        if (current < target) requestAnimationFrame(updateCounter);
+      };
+      updateCounter();
     });
   </script>
 </body>
