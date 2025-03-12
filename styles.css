@@ -1,9 +1,20 @@
+:root {
+  --primary-color: #C5A47E;
+  --secondary-color: #B89370;
+  --font-primary: 'Lora', serif;
+  --font-secondary: 'Roboto', sans-serif;
+  --white: #fff;
+  --black: #333;
+  --gray: #666;
+  --light-gray: #f9f9f9;
+}
+
 /* 基本樣式 */
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: var(--font-secondary), Arial, sans-serif;
   margin: 0;
-  color: #333;
-  background-color: #fff;
+  color: var(--black);
+  background-color: var(--white);
   line-height: 1.6;
 }
 
@@ -13,7 +24,7 @@ body {
   width: 100%;
   z-index: 1000;
   background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .aia-nav {
@@ -24,12 +35,12 @@ body {
 }
 
 .nav-logo {
-  width: 120px;
+  width: 200px;
 }
 
 .nav-cta {
-  background: #E4002B;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--white);
   padding: 10px 20px;
   border-radius: 50px;
   text-decoration: none;
@@ -38,7 +49,7 @@ body {
 }
 
 .nav-cta:hover {
-  background: #B80022;
+  background: var(--secondary-color);
 }
 
 /* 首屏 Hero Section */
@@ -60,7 +71,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(26,26,26,0.5);
+  background: rgba(26, 26, 26, 0.5);
   z-index: 1;
 }
 
@@ -70,10 +81,10 @@ body {
 }
 
 .hero-title {
-  font-family: 'Lora', serif;
+  font-family: var(--font-primary);
   font-size: 3rem;
   margin-bottom: 20px;
-  color: #fff;
+  color: var(--white);
 }
 
 .hero-subtitle {
@@ -83,8 +94,8 @@ body {
 }
 
 .hero-cta {
-  background: #C5A47E;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--white);
   padding: 15px 30px;
   border-radius: 50px;
   text-decoration: none;
@@ -93,7 +104,7 @@ body {
 }
 
 .hero-cta:hover {
-  background: #B89370;
+  background: var(--secondary-color);
 }
 
 .hero-icons {
@@ -104,7 +115,7 @@ body {
 
 .hero-icons i {
   font-size: 2rem;
-  color: #C5A47E;
+  color: var(--primary-color);
   transition: transform 0.3s;
 }
 
@@ -116,7 +127,7 @@ body {
   position: absolute;
   bottom: 20px;
   font-size: 2rem;
-  color: #fff;
+  color: var(--white);
   animation: bounce 2s infinite;
   z-index: 2;
 }
@@ -137,14 +148,14 @@ body {
 .services {
   padding: 80px 20px;
   text-align: center;
-  background: #fff;
+  background: var(--white);
 }
 
 .services h2 {
-  font-family: 'Lora', serif;
+  font-family: var(--font-primary);
   font-size: 2.8rem;
   margin-bottom: 40px;
-  color: #333;
+  color: var(--black);
 }
 
 .service-grid {
@@ -156,7 +167,7 @@ body {
 }
 
 .service-card {
-  background: #f9f9f9;
+  background: var(--light-gray);
   padding: 30px;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -164,37 +175,37 @@ body {
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
   font-size: 2rem;
-  color: #C5A47E;
+  color: var(--primary-color);
   margin-bottom: 20px;
 }
 
 .service-card h3 {
-  font-family: 'Lora', serif;
+  font-family: var(--font-primary);
   font-size: 1.5rem;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--black);
 }
 
 .service-card p {
   font-size: 1rem;
-  color: #666;
+  color: var(--gray);
   margin-bottom: 20px;
 }
 
 .service-link {
-  color: #C5A47E;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s;
 }
 
 .service-link:hover {
-  color: #B89370;
+  color: var(--secondary-color);
 }
 
 /* 數據儀表板 */
@@ -205,10 +216,10 @@ body {
 }
 
 .data-dashboard h2 {
-  font-family: 'Lora', serif;
+  font-family: var(--font-primary);
   font-size: 2.8rem;
   margin-bottom: 40px;
-  color: #333;
+  color: var(--black);
 }
 
 .data-grid {
@@ -220,38 +231,38 @@ body {
 }
 
 .data-card {
-  background: #fff;
+  background: var(--white);
   padding: 30px;
   border-radius: 10px;
   border: 1px solid #eee;
 }
 
 .data-number {
-  font-family: 'Lora', serif;
+  font-family: var(--font-primary);
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #C5A47E;
+  color: var(--primary-color);
 }
 
 .data-card p {
   font-size: 1rem;
-  color: #666;
+  color: var(--gray);
 }
 
 /* 行動呼籲 - Grand 風格 */
 .cta {
   padding: 100px 20px;
   text-align: center;
-  background: linear-gradient(45deg, #1a1a1a, #333); /* 深色漸變背景 */
-  color: #fff;
+  background: linear-gradient(45deg, #1a1a1a, #333);
+  color: var(--white);
 }
 
 .cta h2 {
-  font-family: 'Playfair Display', serif; /* 高級字體 */
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
   margin-bottom: 20px;
   color: #f0f0f0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* 文字陰影 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .cta p {
@@ -289,13 +300,13 @@ body {
 }
 
 .footer-links a {
-  color: #333;
+  color: var(--black);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .footer-links a:hover {
-  color: #C5A47E;
+  color: var(--primary-color);
 }
 
 .footer-social {
@@ -304,18 +315,18 @@ body {
 }
 
 .footer-social a {
-  color: #333;
+  color: var(--black);
   font-size: 1.5rem;
   transition: color 0.3s;
 }
 
 .footer-social a:hover {
-  color: #C5A47E;
+  color: var(--primary-color);
 }
 
 .footer-copy {
   margin-top: 20px;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--gray);
   text-align: center;
 }
