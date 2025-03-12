@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聯絡 Davis</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <section class="contact-form">
+    <h2>聯絡 Davis</h2>
+    <p>如有查詢歡迎聯絡我</p>
+    <form id="query-form">
+      <!-- 姓名 -->
+      <div class="form-group">
+        <label for="name">姓名<span class="required">*</span></label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <!-- 電話/電郵 -->
+      <div class="form-group">
+        <label for="contact">電話/電郵<span class="required">*</span></label>
+        <input type="text" id="contact" name="contact" required>
+      </div>
+
+      <!-- 選擇想查詢項目 -->
+      <div class="form-group">
+        <label for="query-type">選擇想查詢項目<span class="required">*</span></label>
+        <select id="query-type" name="query-type" required>
+          <option value="一般查詢">一般查詢</option>
+          <option value="個人理財">個人理財</option>
+          <option value="家庭財務策劃">家庭財務策劃</option>
+          <option value="風險管理">風險管理</option>
+          <option value="健康管理">健康管理</option>
+          <option value="企業服務">企業服務</option>
+          <option value="加入我們">加入我們</option>
+          <option value="合作查詢">合作查詢</option>
+        </select>
+      </div>
+
+      <!-- 留言 -->
+      <div class="form-group">
+        <label for="message">留言</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <!-- 您是怎麼聽說我們的？ -->
+      <div class="form-group">
+        <label for="source">您是怎麼聽說我們的？</label>
+        <select id="source" name="source">
+          <option value="朋友推薦">朋友推薦</option>
+          <option value="社交媒體">社交媒體</option>
+          <option value="網站搜尋">網站搜尋</option>
+          <option value="其他">其他</option>
+        </select>
+      </div>
+
+      <!-- 提交按鈕 -->
+      <button type="submit" class="submit-btn">提交查詢</button>
+    </form>
+  </section>
+
+  <!-- JavaScript -->
+  <script>
+  document.getElementById('query-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = {
+      name: document.getElementById('name').value,
+      contact: document.getElementById('contact').value,
+      queryType: document.getElementById('query-type').value,
+      message: document.getElementById('message').value,
+      source: document.getElementById('source').value,
+    };
+
+    fetch('https://script.google.com/macros/s/AKfycbwVFZT56kkY0D-wrzwd078O_fWGZdGx8JiG8kwRgIVu8mRXByQoqujYLBLBOCl8Y7qdHg/exec', {
+      method: 'POST',
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.text())
+      .then(() => {
+        alert('查詢已提交，我們會盡快與您聯絡！');
+        document.getElementById('query-form').reset();
+      })
+      .catch(() => {
+        alert('提交失敗，請稍後再試。');
+      });
+  });
+</script>
+</body>
+</html>
