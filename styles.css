@@ -74,6 +74,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: background 0.3s;
+  margin-left: 50px;
 }
 
 .nav-cta:hover {
