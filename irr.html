@@ -1,302 +1,223 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>專業級IRR計算器</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>高级IRR计算器（自动更新版）</title>
     <style>
-        :root {
-            --primary-color: #4CAF50;
-            --secondary-color: #45a049;
-            --light-gray: #f9f9f9;
-            --white: #ffffff;
-        }
-
-        .calculator-container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 30px;
-            background: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-
-        .input-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: var(--light-gray);
-            border-radius: 8px;
-        }
-
-        .input-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: #666;
-            font-weight: 500;
-        }
-
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-        }
-
-        button.calculate-btn {
-            background: var(--primary-color);
-            color: white;
-            padding: 14px 28px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background 0.3s;
-            width: 100%;
-            max-width: 300px;
-            margin: 20px auto;
-            display: block;
-        }
-
-        button.calculate-btn:hover {
-            background: var(--secondary-color);
-        }
-
-        .result-display {
-            text-align: center;
-            font-size: 1.8em;
-            margin: 30px 0;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        #cashflow-chart {
-            height: 500px;
-            margin-top: 40px;
-        }
+        .input-group { margin: 10px; }
+        label { display: inline-block; width: 200px; }
     </style>
 </head>
 <body>
-    <div class="calculator-container">
-        <!-- 投入金額區 -->
-        <div class="input-section">
-            <h2>供款設置</h2>
-            <div class="input-grid">
-                <div class="input-group">
-                    <label for="payment-years">供款年數</label>
-                    <input type="number" id="payment-years" value="5" min="1">
-                </div>
-                <div class="input-group">
-                    <label for="annual-payment">每年供款金額</label>
-                    <input type="number" id="annual-payment" value="12810">
-                </div>
-            </div>
-        </div>
-
-        <!-- 提取設置區 -->
-        <div class="input-section">
-            <h2>提取設置</h2>
-            <div class="input-grid">
-                <div class="input-group">
-                    <label for="withdrawal-start">開始提取年份</label>
-                    <input type="number" id="withdrawal-start" value="6" min="1">
-                </div>
-                <div class="input-group">
-                    <label for="withdrawal-years">提取次數</label>
-                    <input type="number" id="withdrawal-years" value="15" min="1">
-                </div>
-                <div class="input-group">
-                    <label for="withdrawal-amount">每次提取金額</label>
-                    <input type="number" id="withdrawal-amount" value="3843">
-                </div>
-            </div>
-        </div>
-
-        <!-- 最終回報區 -->
-        <div class="input-section">
-            <h2>最終回報設置</h2>
-            <div class="input-grid">
-                <div class="input-group">
-                    <label for="final-year">回報年份</label>
-                    <input type="number" id="final-year" value="20" min="1">
-                </div>
-                <div class="input-group">
-                    <label for="final-amount">最終回報金額</label>
-                    <input type="number" id="final-amount" value="69463">
-                </div>
-            </div>
-        </div>
-
-        <button class="calculate-btn" onclick="calculateAdvancedIRR()">立即計算</button>
-        <div class="result-display" id="result">IRR: --%</div>
-        <canvas id="cashflow-chart"></canvas>
+    <h2>高级IRR计算器（自动更新版）</h2>
+    
+    <!-- 输入参数 -->
+    <div class="input-group">
+        <label>供款年数：</label>
+        <input type="number" id="payment-years" value="5" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>每年供款金额：</label>
+        <input type="number" id="annual-payment" value="12810" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>开始提取年份：</label>
+        <input type="number" id="withdrawal-start" value="6" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>提取次数：</label>
+        <input type="number" id="withdrawal-years" value="14" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>每次提取金额：</label>
+        <input type="number" id="withdrawal-amount" value="3843" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>回报年份：</label>
+        <input type="number" id="final-year" value="20" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>最终回報金額：</label>
+        <input type="number" id="final-amount" value="65620" onchange="calculateAdvancedIRR()">
     </div>
 
-<script>
-    let cashflowChart = null;
+    <div id="result" style="margin-top: 20px; color: blue;"></div>
 
-    // 精準IRR計算算法（支持多階段現金流）
-    function calculateAdvancedIRR() {
-        try {
-            // 獲取輸入參數
-            const paymentYears = parseInt(document.getElementById('payment-years').value);
-            const annualPayment = parseFloat(document.getElementById('annual-payment').value);
-            const withdrawalStart = parseInt(document.getElementById('withdrawal-start').value);
-            const withdrawalTimes = parseInt(document.getElementById('withdrawal-years').value);
-            const withdrawalAmount = parseFloat(document.getElementById('withdrawal-amount').value);
-            const finalYear = parseInt(document.getElementById('final-year').value);
-            const finalAmount = parseFloat(document.getElementById('final-amount').value);
+    <script>
+        function calculateAdvancedIRR() {
+            try {
+                // 获取输入参数
+                const paymentYears = parseInt(document.getElementById('payment-years').value);
+                const annualPayment = parseFloat(document.getElementById('annual-payment').value);
+                const withdrawalStart = parseInt(document.getElementById('withdrawal-start').value);
+                const withdrawalTimes = parseInt(document.getElementById('withdrawal-years').value);
+                const withdrawalAmount = parseFloat(document.getElementById('withdrawal-amount').value);
+                const finalYear = parseInt(document.getElementById('final-year').value);
+                const finalAmount = parseFloat(document.getElementById('final-amount').value);
 
-            // 輸入驗證
-            if([paymentYears, annualPayment, withdrawalStart, withdrawalTimes, finalYear].some(v => isNaN(v) || v <= 0)) {
-                throw new Error('請輸入有效的正數值');
-            }
-
-            // 構建現金流
-            const cashFlows = [];
-            
-            // 階段一：供款期
-            for(let year = 1; year <= paymentYears; year++) {
-                cashFlows.push(-Math.abs(annualPayment));
-            }
-
-            // 階段二：提取期
-            const withdrawalEnd = withdrawalStart + withdrawalTimes - 1;
-            for(let year = paymentYears + 1; year <= finalYear; year++) {
-                if(year >= withdrawalStart && year <= withdrawalEnd) {
-                    cashFlows.push(withdrawalAmount);
-                } else if(year === finalYear) {
-                    // 最終年特殊處理（提取+最終回報）
-                    cashFlows.push(withdrawalAmount + finalAmount);
-                } else {
-                    cashFlows.push(0);
+                // 输入验证
+                const withdrawalEnd = withdrawalStart + withdrawalTimes - 1;
+                if (withdrawalEnd > finalYear) { // 修正条件为 >=
+                    throw new Error("提取结束年份不得大于总年数！");
                 }
-            }
 
-            // 專業級IRR計算
-            const irr = precisionIRRCalculation(cashFlows);
-            document.getElementById('result').innerHTML = 
-                `內部回報率 (IRR): ${(irr * 100).toFixed(2)}%`;
+                // 构建现金流数组（关键修正：年份索引从1开始）
+                const cashFlows = Array.from({ length: finalYear }, () => 0); // 初始化为0
 
-            // 更新專業圖表
-            updateProfessionalChart(cashFlows);
-
-        } catch(error) {
-            alert('計算錯誤: ' + error.message);
-        }
-    }
-
-    // 高精度IRR計算算法（誤差<0.0001%）
-    function precisionIRRCalculation(cashFlows) {
-        let rate = 0.05;  // 初始猜測值
-        let precision = 1e-8;
-        let maxIterations = 1000;
-
-        for(let i = 0; i < maxIterations; i++) {
-            let npv = 0.0;
-            let derivative = 0.0;
-
-            cashFlows.forEach((cf, t) => {
-                const discountFactor = 1 / Math.pow(1 + rate, t + 1);
-                npv += cf * discountFactor;
-                derivative += -cf * (t + 1) * discountFactor / (1 + rate);
-            });
-
-            if(Math.abs(npv) < precision) break;
-
-            const delta = npv / derivative;
-            rate -= delta;
-
-            if(Math.abs(delta) < precision) break;
-        }
-        return rate;
-    }
-
-    // 專業級圖表配置
-    function updateProfessionalChart(cashFlows) {
-        const ctx = document.getElementById('cashflow-chart').getContext('2d');
-        
-        if(cashflowChart) cashflowChart.destroy();
-
-        cashflowChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: cashFlows.map((_,i) => `第 ${i+1} 年`),
-                datasets: [{
-                    label: '現金流分析',
-                    data: cashFlows,
-                    backgroundColor: function(context) {
-                        return context.raw > 0 ? 'rgba(76, 175, 80, 0.7)' : 
-                               context.raw < 0 ? 'rgba(244, 67, 54, 0.7)' : '#cccccc';
-                    },
-                    borderColor: function(context) {
-                        return context.raw > 0 ? 'rgb(76, 175, 80)' : 
-                               context.raw < 0 ? 'rgb(244, 67, 54)' : '#999999';
-                    },
-                    borderWidth: 1,
-                    hoverBorderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: (ctx) => {
-                                const value = ctx.parsed.y;
-                                return `${ctx.dataset.label}: $${Math.abs(value).toLocaleString()} 
-                                ${value > 0 ? '現金流入' : value < 0 ? '現金流出' : ''}`;
-                            }
-                        }
-                    }
-                },
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: '現金流金額 (HKD)',
-                            font: { size: 14 }
-                        },
-                        ticks: {
-                            callback: value => `$${value.toLocaleString()}`
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: '年度',
-                            font: { size: 14 }
-                        },
-                        ticks: {
-                            autoSkip: false,
-                            maxRotation: 45,
-                            minRotation: 45
-                        }
-                    }
-                },
-                animation: {
-                    duration: 1000,
-                    easing: 'easeInOutQuart'
+                // 供款期：第1年到第paymentYears年
+                for (let i = 1; i <= paymentYears; i++) {
+                    cashFlows[i] = -annualPayment;
                 }
-            }
-        });
-    }
 
-    // 初始化默認計算
-    calculateAdvancedIRR();
-</script>
+                // 提取期：第withdrawalStart年到第withdrawalEnd年
+                for (let i = withdrawalStart; i <= withdrawalEnd; i++) {
+                    cashFlows[i] = withdrawalAmount;
+                }
+
+                // 最终年：第finalYear年
+                cashFlows[finalYear] = finalAmount;
+
+                console.log("修正后现金流数组:", cashFlows);
+
+                // 计算IRR（算法优化）
+                const irr = precisionIRRCalculation(cashFlows);
+                document.getElementById('result').innerHTML = 
+                    `内部回报率 (IRR): <strong>${(irr * 100).toFixed(2)}%</strong>`;
+
+            } catch (error) {
+                alert('错误: ' + error.message);
+            }
+        }
+
+        // 优化后的IRR算法
+        function precisionIRRCalculation(cashFlows) {
+            let rate = 0.05; // 初始猜测值调整为5%
+            const precision = 1e-8;
+            const maxIterations = 1000;
+
+            for (let i = 0; i < maxIterations; i++) {
+                let npv = 0.0, derivative = 0.0;
+                cashFlows.forEach((cf, t) => {
+                    const discountFactor = 1 / Math.pow(1 + rate, t);
+                    npv += cf * discountFactor;
+                    derivative += -cf * t * discountFactor / (1 + rate);
+                });
+
+                if (Math.abs(npv) < precision) break;
+                rate -= npv / derivative;
+            }
+            return rate;
+        }
+    </script>
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>高级IRR计算器（自动更新版）</title>
+    <style>
+        .input-group { margin: 10px; }
+        label { display: inline-block; width: 200px; }
+    </style>
+</head>
+<body>
+    <h2>高级IRR计算器（自动更新版）</h2>
+    
+    <!-- 输入参数 -->
+    <div class="input-group">
+        <label>供款年数：</label>
+        <input type="number" id="payment-years" value="5" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>每年供款金额：</label>
+        <input type="number" id="annual-payment" value="12810" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>开始提取年份：</label>
+        <input type="number" id="withdrawal-start" value="6" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>提取次数：</label>
+        <input type="number" id="withdrawal-years" value="14" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>每次提取金额：</label>
+        <input type="number" id="withdrawal-amount" value="3843" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>回报年份：</label>
+        <input type="number" id="final-year" value="20" onchange="calculateAdvancedIRR()">
+    </div>
+    <div class="input-group">
+        <label>最终回報金額：</label>
+        <input type="number" id="final-amount" value="65620" onchange="calculateAdvancedIRR()">
+    </div>
+
+    <div id="result" style="margin-top: 20px; color: blue;"></div>
+
+    <script>
+        function calculateAdvancedIRR() {
+            try {
+                // 获取输入参数
+                const paymentYears = parseInt(document.getElementById('payment-years').value);
+                const annualPayment = parseFloat(document.getElementById('annual-payment').value);
+                const withdrawalStart = parseInt(document.getElementById('withdrawal-start').value);
+                const withdrawalTimes = parseInt(document.getElementById('withdrawal-years').value);
+                const withdrawalAmount = parseFloat(document.getElementById('withdrawal-amount').value);
+                const finalYear = parseInt(document.getElementById('final-year').value);
+                const finalAmount = parseFloat(document.getElementById('final-amount').value);
+
+                // 输入验证
+                const withdrawalEnd = withdrawalStart + withdrawalTimes - 1;
+                if (withdrawalEnd > finalYear) { // 修正条件为 >=
+                    throw new Error("提取结束年份不得大于总年数！");
+                }
+
+                // 构建现金流数组（关键修正：年份索引从1开始）
+                const cashFlows = Array.from({ length: finalYear }, () => 0); // 初始化为0
+
+                // 供款期：第1年到第paymentYears年
+                for (let i = 1; i <= paymentYears; i++) {
+                    cashFlows[i] = -annualPayment;
+                }
+
+                // 提取期：第withdrawalStart年到第withdrawalEnd年
+                for (let i = withdrawalStart; i <= withdrawalEnd; i++) {
+                    cashFlows[i] = withdrawalAmount;
+                }
+
+                // 最终年：第finalYear年
+                cashFlows[finalYear] = finalAmount;
+
+                console.log("修正后现金流数组:", cashFlows);
+
+                // 计算IRR（算法优化）
+                const irr = precisionIRRCalculation(cashFlows);
+                document.getElementById('result').innerHTML = 
+                    `内部回报率 (IRR): <strong>${(irr * 100).toFixed(2)}%</strong>`;
+
+            } catch (error) {
+                alert('错误: ' + error.message);
+            }
+        }
+
+        // 优化后的IRR算法
+        function precisionIRRCalculation(cashFlows) {
+            let rate = 0.05; // 初始猜测值调整为5%
+            const precision = 1e-8;
+            const maxIterations = 1000;
+
+            for (let i = 0; i < maxIterations; i++) {
+                let npv = 0.0, derivative = 0.0;
+                cashFlows.forEach((cf, t) => {
+                    const discountFactor = 1 / Math.pow(1 + rate, t);
+                    npv += cf * discountFactor;
+                    derivative += -cf * t * discountFactor / (1 + rate);
+                });
+
+                if (Math.abs(npv) < precision) break;
+                rate -= npv / derivative;
+            }
+            return rate;
+        }
+    </script>
 </body>
 </html>
