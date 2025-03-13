@@ -235,72 +235,77 @@
     }
 
     // 圖表引擎
+// 修改圖表更新函數為折線圖版本
     function updateFinanceChart(cashFlows) {
         const ctx = document.getElementById('cashflow-chart').getContext('2d');
         
+        if(financeChart) financeChart.destroy();
+
         financeChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
                 labels: cashFlows.map((_,i) => `第 ${i+1} 年`),
                 datasets: [{
                     label: '現金流 (HKD)',
                     data: cashFlows,
-                    backgroundColor: (ctx) => 
-                        ctx.raw > 0 ? 'rgba(76, 175, 80, 0.8)' : 
-                        ctx.raw < 0 ? 'rgba(255, 82, 82, 0.8)' : '#BDBDBD',
-                    borderColor: (ctx) => 
-                        ctx.raw > 0 ? 'rgb(56, 142, 60)' : 
-                        ctx.raw < 0 ? 'rgb(198, 40, 40)' : '#999',
-                    borderWidth: 1,
-                    hoverBorderWidth: 2
+                    borderWidth: 3,
+                    pointRadius: 5,
+                    pointHoverRadius: 7,
+                    tension: 0.3,
+                    fill: false,
+                    segment: {
+                        borderColor: ctx => ctx.p0.raw < 0 ? '#ff4444' : '#4CAF50'
+                    },
+                    pointBackgroundColor: ctx => 
+                        ctx.raw < 0 ? '#ff4444' : ctx.raw > 50000 ? '#FF9800' : '#4CAF50'
                 }]
             },
             options: {
                 responsive: true,
                 maintainAspectRatio: false,
                 plugins: {
-                    legend: {
-                        labels: {
-                            font: {
-                                size: 14
+                    annotation: {
+                        annotations: {
+                            irrLine: {
+                                type: 'line',
+                                yMin: ctx => ctx.chart.data.datasets[0].data[19] * 0.05,
+                                yMax: ctx => ctx.chart.data.datasets[0].data[19] * 0.05,
+                                borderColor: '#2196F3',
+                                borderWidth: 2,
+                                borderDash: [6, 6],
+                                label: {
+                                    content: 'IRR 基準線',
+                                    position: 'end'
+                                }
                             }
                         }
                     },
                     tooltip: {
-                        backgroundColor: 'rgba(0,0,0,0.9)',
-                        titleFont: { size: 16 },
-                        bodyFont: { size: 14 },
                         callbacks: {
-                            label: (ctx) => 
-                                ` ${ctx.dataset.label}: $${Math.abs(ctx.raw).toLocaleString()}`
+                            label: ctx => `年份 ${ctx.label}: $${Math.abs(ctx.parsed.y).toLocaleString()}`
                         }
                     }
                 },
                 scales: {
                     y: {
                         beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: '金額 (HKD)',
-                            font: { size: 14 }
-                        },
+                        title: {display: true, text: '金額 (HKD)'},
                         ticks: {
                             callback: value => `$${Math.abs(value).toLocaleString()}`,
-                            font: { size: 12 }
+                            color: ctx => ctx.tick.value < 0 ? '#ff4444' : '#4CAF50'
                         }
                     },
                     x: {
+                        title: {display: true, text: '年份'},
                         ticks: {
                             maxRotation: 45,
-                            minRotation: 45,
-                            autoSkip: false,
-                            font: { size: 12 }
+                            minRotation: 45
                         }
                     }
                 },
                 animation: {
                     duration: 1000,
-                    easing: 'easeOutQuart'
+                    easing: 'easeInOutCubic'
                 }
             }
         });
