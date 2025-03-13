@@ -73,6 +73,33 @@
         </div>
       </div>
     </section>
+<section class="irr-calculator">
+  <h2>IRR 計算機</h2>
+  <div class="calculator-form">
+    <div class="input-group">
+      <label for="contribution-years">供款年期</label>
+      <input type="number" id="contribution-years" placeholder="例如：10" min="1">
+    </div>
+    <div class="input-group">
+      <label for="annual-investment">每年投入金額</label>
+      <input type="number" id="annual-investment" placeholder="例如：100000" min="0">
+    </div>
+    <div class="input-group">
+      <label for="return-years">回報年期</label>
+      <input type="number" id="return-years" placeholder="例如：5" min="1">
+    </div>
+    <div class="input-group">
+      <label for="total-return">總回報金額</label>
+      <input type="number" id="total-return" placeholder="例如：1500000" min="0">
+    </div>
+    <button class="btn-primary" onclick="calculateIRR()">計算 IRR</button>
+  </div>
+  <div class="calculator-result">
+    <h3>計算結果</h3>
+    <p>內部回報率 (IRR): <span id="irr-result">--</span>%</p>
+    <canvas id="irr-chart"></canvas>
+  </div>
+</section>
   </main>
 
   <!-- 頁尾 -->
