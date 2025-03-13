@@ -60,7 +60,7 @@ body {
 }
 
 .nav-list li a:hover {
-    color: #007bff; /* 滑鼠懸停時的顏色 */
+    color: var(--primary-color); /* 滑鼠懸停時的顏色 */
 }
 
 
