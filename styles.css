@@ -22,6 +22,7 @@ body {
 .aia-header {
     position: fixed;
     width: 100%;
+    z-index: 1000; /* 確保位於其他內容之上 */
     background: rgba(255, 255, 255, 0.9); /* 白色背景 */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 陰影效果 */
     padding: 15px 30px;
