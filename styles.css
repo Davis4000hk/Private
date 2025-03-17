@@ -75,6 +75,23 @@ body {
   font-weight: bold;
   transition: background 0.3s;
   margin-left: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.nav-cta::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  left: -100%;
+  transition: left 0.4s;
+}
+
+.nav-cta:hover::after {
+  left: 100%;
 }
 
 .nav-cta:hover {
@@ -177,7 +194,11 @@ body {
 .services {
   padding: 80px 20px;
   text-align: center;
-  background: var(--white);
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgba(197,164,126,0.05) 0%,
+    rgba(255,255,255,1) 60%
+  );
 }
 
 .services h2 {
@@ -358,4 +379,193 @@ body {
   font-size: 0.9rem;
   color: var(--gray);
   text-align: center;
+}
+/* 新增CSS样式 */
+.value-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.value-image:hover {
+  transform: scale(1.03);
+}
+.data-visual {
+  max-width: 180px;
+  filter: drop-shadow(0 2px 4px rgba(197,164,126,0.2));
+}
+/* 在:root添加新变量 */
+--glass-effect: linear-gradient(
+  135deg, 
+  rgba(255,255,255,0.1) 0%,
+  rgba(255,255,255,0.05) 100%
+);
+
+/* 修改服务卡片样式 */
+.service-card {
+  background: var(--glass-effect);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.7);
+}
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .video-container {
+    aspect-ratio: 16/9;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .brand-values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+//影片全局樣式 */
+:root {
+  --primary-color: #c5a47e; /* 主題色 */
+  --gray: #666; /* 灰色文字 */
+}
+
+.video-testimonials {
+  padding: 4rem 1rem;
+  background: linear-gradient(45deg, #f9f9f9 0%, #ffffff 100%);
+  text-align: center; /* 文字置中 */
+  font-family: var(--font-primary);
+  font-size: 2.8rem;
+  color: var(--black);
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 兩列佈局 */
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.video-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(197, 164, 126, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.video-container {
+  position: relative;
+  padding-top: 0%; /* 16:9 比例 */
+  background: #f5f5f5; /* 預設背景色 */
+  overflow: hidden;
+}
+
+.testimonial-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 填滿容器 */
+  object-position: center; /* 圖片置中 */
+}
+
+.video-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(197, 164, 126, 0.95);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.video-content {
+  padding: 1.5rem;
+  border-top: 1px solid var(--primary-color);
+}
+.video-content h3 {
+  font-size: 1.3rem; /* 調整為更合理的字體大小 */
+  color: var(--primary-color); /* 使用主題色 */
+  font-weight: 600; /* 中等偏粗的字體粗細 */
+  margin-top: 0rem;
+  margin-bottom: 0.5rem; /* 底部外邊距 */
+}
+
+.video-title {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.finance-data {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem; /* 減少外邊距 */
+}
+
+.data-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(197, 164, 126, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(197, 164, 126, 0.1);
+}
+
+dt {
+  font-size: 0.9rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+}
+
+dd {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+/* 互動效果 */
+.video-card:hover {
+  transform: translateY(0px);
+  box-shadow: 0 8px 25px rgba(197, 164, 126, 0.12);
+}
+
+/* 響應式佈局 */
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: 1fr; /* 單列佈局 */
+    gap: 1.5rem;
+  }
 }
