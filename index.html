@@ -32,6 +32,12 @@
   </header>
 
   <!-- 首屏 Hero Section -->
+  <!-- 修改Hero Section结构 -->
+<div class="video-background">
+  <video autoplay muted loop class="hero-video">
+    <source src="https://davis4000hk.github.io/Private/Service.mp4" type="video/mp4">
+  </video>
+</div>
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -53,6 +59,24 @@
       <i class="fas fa-chevron-down"></i>
     </div>
   </section>
+  
+  <!-- 在Hero Section下方新增品牌价值展示区块 -->
+<section class="brand-values">
+  <div class="value-card">
+    <img src="images/global-team.jpg" 
+         alt="国际财富管理团队工作场景" 
+         class="value-image"
+         loading="lazy">
+    <h3>跨国资产配置专家</h3>
+  </div>
+  <div class="value-card">
+    <img src="MDRT.png"
+         alt="专业资格认证展示"
+         class="value-image"
+         loading="lazy">
+    <h3>国际认证资质</h3>
+  </div>
+</section>
 
   <!-- 服務亮點 -->
   <main>
@@ -85,15 +109,77 @@
         </div>
       </div>
     </section>
+    
+<!-- 在客戶見證區塊 -->
+<section class="video-testimonials">
+  <h2 class="section-title">客戶成功實證</h2>
+  
+  <div class="video-grid">
+    <!-- 影片1 -->
+    <article class="video-card">
+      <div class="video-container">
+<video controls preload="metadata" poster=""
+       style="object-fit: cover; object-position: center;">
+  <source src="https://davis4000hk.github.io/Private/Service.mp4" type="video/mp4">
+</video>
+        <div class="video-badge">🏆 年度精選</div>
+      </div>
+      <div class="video-content">
+        <h3>投資移民計劃</h3>
+        <dl class="finance-data">
+          <div class="data-item">
+            <dt>管理規模</dt>
+            <dd>HKD 2700萬</dd>
+          </div>
+          <div class="data-item">
+            <dt>年化收益</dt>
+            <dd>8.6%</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+<!-- 影片1 -->
+<article class="video-card">
+      <div class="video-container">
+<video controls preload="metadata" poster=""
+style="object-fit: cover; object-position: center;" >
+
+  <source src="https://davis4000hk.github.io/Private/Service.mp4" type="video/mp4">
+</video>
+        <div class="video-badge">🏆 年度精選</div>
+      </div>
+      <div class="video-content">
+        <h3>投資移民計劃</h3>
+        <dl class="finance-data">
+          <div class="data-item">
+            <dt>管理規模</dt>
+            <dd>¥8200萬</dd>
+          </div>
+          <div class="data-item">
+            <dt>年化收益</dt>
+            <dd>12.6%</dd>
+          </div>
+        </dl>
+      </div>
+    </article>
+  </div>
+</section>
 
     <!-- 數據儀表板 -->
     <section class="data-dashboard">
       <h2>數據見證</h2>
       <div class="data-grid">
         <div class="data-card">
-          <h3 class="data-number">5000000000</h3>
+          <h3 class="data-number">50000000</h3>
           <p>管理資產總額</p>
         </div>
+        <!-- 修改data-dashboard部分 -->
+<div class="data-card">
+  <img src="images/infographic-assets.svg" 
+       alt="资产管理规模增长曲线"
+       class="data-visual">
+  <p>过去五年资产管理规模</p>
+</div>
         <div class="data-card">
           <h3 class="data-number">99</h3>
           <p>客戶滿意度</p>
