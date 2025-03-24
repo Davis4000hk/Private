@@ -42,33 +42,52 @@ body {
   width: 200px;
 }
 
+/* 漢堡選單按鈕 */
+.hamburger {
+  display: none; /* 桌面端隱藏 */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1000;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background: var(--black);
+  transition: all 0.3s ease;
+}
+
 /* 導航連結樣式 */
 .nav-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    z-index: 999; /* 確保下拉選單位於按鈕上方 */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  z-index: 999; /* 確保下拉選單位於按鈕上方 */
 }
 
 .nav-list li {
-    margin: 0 15px; /* 選項之間的間距 */
-  
+  margin: 0 15px; /* 選項之間的間距 */
 }
 
 .nav-list li a {
-    color: #333; /* 深色文字 */
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  color: #333; /* 深色文字 */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 .nav-list li a:hover {
-    color: var(--primary-color); /* 滑鼠懸停時的顏色 */
+  color: var(--primary-color); /* 滑鼠懸停時的顏色 */
 }
-
 
 .nav-cta {
   background: var(--primary-color);
@@ -85,17 +104,59 @@ body {
   white-space: nowrap; /* 防止文字換行 */
 }
 
-
-
 .nav-cta:hover {
   background: var(--secondary-color);
 }
+
+/* 手機端樣式 */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* 手機端顯示 */
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 85%;
+    background: var(--white);
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-100%); /* 初始隱藏 */
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 999;
+  }
+
+  .nav-list.active {
+    transform: translateY(0); /* 顯示選單 */
+    opacity: 1;
+  }
+
+  .nav-list li {
+    margin: 10px 0;
+  }
+
+  /* 漢堡選單動畫 */
+  .hamburger.active .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
 
 /* 首屏 Hero Section */
 .hero {
   position: relative;
   height: 100vh;
-  background: url('https://source.unsplash.com/1600x900/?finance,wealth') center/cover no-repeat;
+  background: url('https://davis4000hk.github.io/Private/Service.mp4') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -196,8 +257,8 @@ body {
 
 .services h2 {
   font-family: var(--font-primary);
-  font-size: 2.8rem;
-  margin-bottom: 40px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   color: var(--black);
 }
 
@@ -212,13 +273,15 @@ body {
 .service-card {
   background: var(--light-gray);
   padding: 30px;
+  border: 1px solid #e5e5e5;
+  border-bottom: 3px solid #e5e5e5;
   border-radius: 10px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .service-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .service-icon {
@@ -277,6 +340,8 @@ body {
   background: var(--white);
   padding: 30px;
   border-radius: 10px;
+  border: 1px solid #e5e5e5;
+  border-bottom: 3px solid #e5e5e5;
   border: 1px solid #eee;
 }
 
@@ -456,6 +521,13 @@ body {
   color: var(--black);
 }
 
+.video-testimonials h2 {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--black);
+}
+
 .video-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 兩列佈局 */
@@ -469,6 +541,8 @@ body {
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(197, 164, 126, 0.08);
   overflow: hidden;
+  border: 1px solid #e5e5e5;
+  border-bottom: 3px solid #e5e5e5;
   transition: transform 0.3s ease;
 }
 
@@ -593,36 +667,53 @@ dd {
 }
 
 /* 專業資格認證圖標區塊 */
+/* 桌面端樣式 */
 .certifications-grid {
   display: grid;
-  gap: 10px; /* 網格間距縮小 */
-  padding: 15px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 自動調整列數 */
+  gap: 20px; /* 圖標間距 */
+  padding: 20px;
+  justify-content: center; /* 居中對齊 */
 }
 
-/* 手機端專用佈局 */
+.certifications-grid img {
+  width: 120px; /* 固定圖標寬度 */
+  height: 120px; /* 固定圖標高度 */
+  object-fit: contain; /* 保持圖標比例 */
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certifications-grid img:hover {
+  transform: scale(1.1); /* 懸停時放大圖標 */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 手機端樣式 */
 @media (max-width: 768px) {
   .certifications-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr) !important; /* 強制覆蓋 */
-    grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
-    width: 100%; /* 全屏寬度 */
-    height: 60vh; /* 根據圖片比例計算 */
-    padding: 10px;
-    margin-left: -15px; /* 抵消父容器padding */
+    grid-template-columns: repeat(3, 1fr); /* 手機端顯示 3 列 */
+    gap: 15px;
   }
 
   .certifications-grid img {
-    max-width: 80px; /* 放大圖標尺寸 */
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1; /* 強制正方形 */
-    padding: 8px;    /* 增加呼吸空間 */
-    background: var(--white);
-    border-radius: 9px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    width: 120px; /* 手機端圖標縮小 */
+    height: 120px;
   }
+}
+
+@media (max-width: 480px) {
+  .certifications-grid {
+    grid-template-columns: repeat(3, 1fr); /* 超小設備顯示 2 列 */
+  }
+
+  .certifications-grid img {
+    width: 100px; /* 超小設備圖標進一步縮小 */
+    height: 100px;
+  }
+}
 
   /* 懸停動畫加強 */
   .certifications-grid img:hover {
@@ -630,56 +721,7 @@ dd {
     box-shadow: 0 4px 12px rgba(197,164,126,0.2);
   }
 }
-/* 漢堡選單按鈕 */
-.hamburger {
-  display: none; /* 桌面端隱藏 */
-  flex-direction: column;
-  justify-content: space-around;
-  width: 30px;
-  height: 24px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1000;
-}
-
-.hamburger-line {
-  width: 100%;
-  height: 3px;
-  background: var(--black);
-  transition: all 0.3s ease;
-}
-
-/* 手機端樣式 */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex; /* 手機端顯示 */
-  }
-
-  .nav-list {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 85%;
-    background: var(--white);
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: translateY(-100%); /* 初始隱藏 */
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    z-index: 999;
-  }
-
-  .nav-list.active {
-    transform: translateY(0); /* 顯示選單 */
-    opacity: 1;
-  }
-
-  .nav-list li {
-    margin: 10px 0;
-  }
-
+  
+.video-background {
+  background: url(https://davis4000hk.github.io/Private/Service.mp4) no-repeat center/cover;
 }
