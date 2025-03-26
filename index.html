@@ -81,10 +81,10 @@
       <img src="IMG/MDRT.jpg" alt="MDRT 認證" loading="lazy">
     </div>
     <div class="certification-item">
-      <img src="IMG/CFP.svg" alt="CFP 認證" loading="lazy">
+      <img src="IMG/CFP.jpg" alt="CFP 認證" loading="lazy">
     </div>
     <div class="certification-item">
-      <img src="IMG/RFC.png" alt="RFC 認證" loading="lazy">
+      <img src="IMG/RFC.jpg" alt="RFC 認證" loading="lazy">
     </div>
     <div class="certification-item">
       <img src="IMG/CHRP.jpg" alt="CHRP 認證" loading="lazy">
@@ -96,7 +96,7 @@
       <img src="IMG/IAMA.jpg" alt="IAMA 認證" loading="lazy">
     </div>
     <div class="certification-item">
-      <img src="" alt="EA 認證" loading="lazy">
+      <img src="IMG/IDA.jpg" alt="EA 認證" loading="lazy">
     </div>
     <div class="certification-item">
       <img src="IMG/IDA.jpg" alt="IDA 認證" loading="lazy">
@@ -289,6 +289,22 @@ style="object-fit: cover; object-position: center;" >
       };
       updateCounter();
     });
+  </script>
+  <script>
+    // 组合防护方案
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    
+    document.addEventListener('keydown', e => {
+      if (e.key === 'F12' || 
+          (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+          (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+        alert('操作已被禁止');
+      }
+    });
+
+    // 谨慎使用！会覆盖原有内容
+    // document.write(unescape('%3C%64%69%76%3E加密内容%3C%2F%64%69%76%3E')); 
   </script>
 </body>
 </html>
