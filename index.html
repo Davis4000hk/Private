@@ -290,5 +290,21 @@ style="object-fit: cover; object-position: center;" >
       updateCounter();
     });
   </script>
+  <script>
+    // 组合防护方案
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    
+    document.addEventListener('keydown', e => {
+      if (e.key === 'F12' || 
+          (e.ctrlKey && e.shiftKey && e.key === 'I') || 
+          (e.ctrlKey && e.key === 'u')) {
+        e.preventDefault();
+        alert('操作已被禁止');
+      }
+    });
+
+    // 谨慎使用！会覆盖原有内容
+    // document.write(unescape('%3C%64%69%76%3E加密内容%3C%2F%64%69%76%3E')); 
+  </script>
 </body>
 </html>
