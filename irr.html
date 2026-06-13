@@ -6,8 +6,44 @@
         .input-group { margin: 10px; }
         label { display: inline-block; width: 200px; }
     </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+
+  <!-- 導航欄 -->
+  <header class="aia-header">
+    <nav class="aia-nav">
+      <!-- Logo -->
+      <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo" class="nav-logo" loading="lazy">
+      
+      <!-- 漢堡選單按鈕 -->
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- 導航連結 (全屏選單) -->
+      <ul class="nav-list">
+        <!-- 關閉按鈕 (僅手機端顯示) -->
+        <li class="menu-close-btn"><i class="fas fa-times"></i></li>
+        
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="services.html">服務範疇</a></li>
+        <li><a href="courses.html">線上課程</a></li>
+        <li><a href="shop.html">商店</a></li>
+        <li><a href="team.html">PRIVATE 團隊</a></li>
+        
+        <!-- 置中 WhatsApp 按鈕 -->
+        <li class="mobile-cta">
+          <a href="https://wa.me/85267188956" class="whatsapp-btn">立即 WhatsApp</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
     <h2>高级IRR计算器（自动更新版）</h2>
     
     <!-- 输入参数 -->
@@ -66,6 +102,7 @@
     }
 </script>
 
+  <script src="js/script.js" defer></script>
 </body>
 </html>
         
