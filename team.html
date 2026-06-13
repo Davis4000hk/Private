@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PRIVATE 團隊 - Fortune Wealth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .team-hero {
+      padding: 150px 20px 80px;
+      background: linear-gradient(45deg, #1a1a1a, #333);
+      color: white;
+      text-align: center;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      padding: 80px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .team-member {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .member-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 5px solid #f4f1ea;
+    }
+    .member-role {
+      color: var(--primary-color);
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .member-certs {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header class="aia-header">
+    <nav class="aia-nav">
+      <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo" class="nav-logo">
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-list">
+        <li class="menu-close-btn"><i class="fas fa-times"></i></li>
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="services.html">服務範疇</a></li>
+        <li><a href="courses.html">線上課程</a></li>
+        <li><a href="shop.html">商店</a></li>
+        <li><a href="team.html">PRIVATE 團隊</a></li>
+        <li class="mobile-cta"><a href="https://wa.me/85267188956" class="whatsapp-btn">立即 WhatsApp</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="team-hero">
+    <h1 style="font-family: var(--font-primary); font-size: 3rem;">PRIVATE 專家團隊</h1>
+    <p>匯聚頂尖精英，為您的財富保駕護航。</p>
+  </section>
+
+  <section class="team-grid">
+    <div class="team-member">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="Founder">
+      <h3>Davis Li</h3>
+      <span class="member-role">創始人 & 高級理財顧問</span>
+      <p>擁有超過 10 年財富管理經驗，專注於高端客戶的資產配置與傳承。</p>
+      <div class="member-certs">MDRT TOT | CFP | RFC</div>
+    </div>
+    <div class="team-member">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="Advisor">
+      <h3>Sarah Wong</h3>
+      <span class="member-role">稅務規劃專家</span>
+      <p>擅長國際稅務籌劃與跨境資產合規管理。</p>
+      <div class="member-certs">CPA | CFP</div>
+    </div>
+    <div class="team-member">
+      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="Advisor">
+      <h3>James Chen</h3>
+      <span class="member-role">風險管理總監</span>
+      <p>致力於為家庭與企業構建全方位的風險防護網。</p>
+      <div class="member-certs">CHRP | FLMI</div>
+    </div>
+  </section>
+
+  <footer class="aia-footer">
+    <p class="footer-copy">&copy; 2025 Fortune Wealth. 版權所有</p>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>
