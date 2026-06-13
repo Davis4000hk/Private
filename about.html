@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我們 - Fortune Wealth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .about-hero {
+      padding: 150px 20px 80px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: white;
+      text-align: center;
+    }
+    .about-section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+    }
+    .about-image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    .value-item {
+      text-align: center;
+      padding: 30px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+    .value-item:hover {
+      transform: translateY(-10px);
+    }
+    .value-item i {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 導航欄 -->
+  <header class="aia-header">
+    <nav class="aia-nav">
+      <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo" class="nav-logo">
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="index.html">首頁</a></li>
+        <li><a href="about.html">關於我們</a></li>
+        <li><a href="services.html">服務範疇</a></li>
+        <li><a href="#">線上課程</a></li>
+        <li><a href="#">商店</a></li>
+        <li><a href="#">PRIVATE 團隊</a></li>
+        <li class="mobile-cta">
+          <a href="https://wa.me/85267188956" class="whatsapp-btn">立即 WhatsApp</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Hero -->
+  <section class="about-hero">
+    <h1 style="font-family: var(--font-primary); font-size: 3.5rem;">成就您的財富傳承</h1>
+    <p style="font-size: 1.2rem; max-width: 800px; margin: 20px auto;">Fortune Wealth 致力於為高端客戶提供全方位的財富管理與風險保障方案。</p>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 style="font-family: var(--font-primary); color: var(--primary-color); margin-bottom: 20px;">我們的使命</h2>
+        <p>在變幻莫測的金融市場中，我們不僅是您的理財顧問，更是您財富增值的守護者。我們深信，每一份資產背後都承載著一份責任與夢想。透過專業的數據分析與國際化的視野，我們為您量身打造最穩健的財富增長路徑。</p>
+        <p style="margin-top: 15px;">Fortune Wealth 團隊成員均擁有國際認可資質，如 CFP、MDRT 等，確保為您提供最頂尖的專業服務。</p>
+      </div>
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Team Meeting">
+      </div>
+    </div>
+
+    <!-- Core Values -->
+    <div class="values-grid">
+      <div class="value-item">
+        <i class="fas fa-gem"></i>
+        <h3>卓越品質</h3>
+        <p>堅持最高標準的服務質量與道德規範。</p>
+      </div>
+      <div class="value-item">
+        <i class="fas fa-handshake"></i>
+        <h3>誠信為本</h3>
+        <p>建立在信任基礎上的長期合作夥伴關係。</p>
+      </div>
+      <div class="value-item">
+        <i class="fas fa-lightbulb"></i>
+        <h3>創新思維</h3>
+        <p>靈活應對市場變化，尋找最佳投資機遇。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
+  <footer class="aia-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo">
+      </div>
+      <p class="footer-copy">&copy; 2025 Fortune Wealth. 版權所有</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
