@@ -3,138 +3,176 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AIA 財富管理 - 服務範疇</title>
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/services.css">
-  <link rel="stylesheet" href="styles.css">
+  <title>服務範疇 - Fortune Wealth</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .services-hero {
+      padding: 150px 20px 80px;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1454165833767-027ff33027ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: white;
+      text-align: center;
+    }
+    .service-section {
+      padding: 100px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 100px;
+    }
+    .service-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .service-img {
+      flex: 1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s;
+    }
+    .service-img:hover img {
+      transform: scale(1.05);
+    }
+    .service-info {
+      flex: 1;
+    }
+    .service-info h2 {
+      font-family: var(--font-primary);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--black);
+    }
+    .service-info p {
+      font-size: 1.1rem;
+      color: var(--gray);
+      margin-bottom: 25px;
+    }
+    .service-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+    .service-features li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--black);
+      font-weight: 500;
+    }
+    .service-features i {
+      color: var(--primary-color);
+    }
+    
+    @media (max-width: 768px) {
+      .service-item, .service-item:nth-child(even) {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .service-info h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- 導航欄 -->
-  
-  <!-- 導航欄 -->
   <header class="aia-header">
     <nav class="aia-nav">
-      <!-- Logo -->
-      <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo" class="nav-logo" loading="lazy">
-      
-      <!-- 漢堡選單按鈕 -->
+      <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo" class="nav-logo">
       <button class="hamburger" aria-label="Toggle navigation">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
-
-      <!-- 導航連結 (全屏選單) -->
       <ul class="nav-list">
-        <!-- 關閉按鈕 (僅手機端顯示) -->
         <li class="menu-close-btn"><i class="fas fa-times"></i></li>
-        
         <li><a href="index.html">首頁</a></li>
         <li><a href="about.html">關於我們</a></li>
         <li><a href="services.html">服務範疇</a></li>
         <li><a href="courses.html">線上課程</a></li>
         <li><a href="shop.html">商店</a></li>
         <li><a href="team.html">PRIVATE 團隊</a></li>
-        
-        <!-- 置中 WhatsApp 按鈕 -->
-        <li class="mobile-cta">
-          <a href="https://wa.me/85267188956" class="whatsapp-btn">立即 WhatsApp</a>
-        </li>
+        <li class="mobile-cta"><a href="https://wa.me/85267188956" class="whatsapp-btn">立即 WhatsApp</a></li>
       </ul>
     </nav>
   </header>
 
+  <section class="services-hero">
+    <h1 style="font-family: var(--font-primary); font-size: 3.5rem;">全方位理財解決方案</h1>
+    <p>專業、精準、可靠，為您的每一分財富增值。</p>
+  </section>
 
-  <!-- 服務內容 -->
-  <main class="services-main">
-    <section class="service-section">
-      <h2>孤兒單全流程託管服務</h2>
-      <div class="service-content">
-        <img src="assets/images/orphan-policy.jpg" alt="孤兒單管理" class="service-image">
-        <div class="service-details">
-          <h3>智能診斷系統</h3>
-          <p>運用保單OCR掃描 + 金事通數據庫對接，30分鐘生成《保單健康報告》。</p>
-          <ul>
-            <li>標註高風險條款</li>
-            <li>專屬服務團隊分配</li>
-            <li>動態檢視機制</li>
-          </ul>
-          <a href="#" class="btn-primary">了解更多</a>
-        </div>
+  <main class="service-section">
+    <div class="service-item">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tax Planning">
       </div>
-    </section>
+      <div class="service-info">
+        <h2>稅務高效規劃</h2>
+        <p>運用國際化視野與專業知識，為您量身定制稅務優化方案，合法合規地最大化您的資產價值。</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> 全球資產稅務合規諮詢</li>
+          <li><i class="fas fa-check-circle"></i> 企業與個人稅務負擔優化</li>
+          <li><i class="fas fa-check-circle"></i> 跨境稅務策略規劃</li>
+        </ul>
+        <a href="https://wa.me/85267188956" class="whatsapp-btn">了解詳情</a>
+      </div>
+    </div>
 
-    <section class="service-section">
-      <h2>銀行保單跨機構整合</h2>
-      <div class="service-content">
-        <div class="service-details">
-          <h3>保單整合流程</h3>
-          <p>整合23家銀行、16家險企保單至單一平台，提供智能分析系統。</p>
-          <ul>
-            <li>數據抓取授權</li>
-            <li>四維分析報告</li>
-            <li>銀行渠道特權</li>
-          </ul>
-          <a href="#" class="btn-primary">立即整合</a>
-        </div>
-        <img src="assets/images/bank-integration.jpg" alt="銀行保單整合" class="service-image">
+    <div class="service-item">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Retirement">
       </div>
-    </section>
+      <div class="service-info">
+        <h2>退休金與傳承規劃</h2>
+        <p>確保您在享受金色年華的同時，資產能夠安全、有序地傳承給下一代，延續家族財富與榮耀。</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> 退休生活成本精確預估</li>
+          <li><i class="fas fa-check-circle"></i> 家族信託與遺囑安排</li>
+          <li><i class="fas fa-check-circle"></i> 多元化退休投資組合</li>
+        </ul>
+        <a href="https://wa.me/85267188956" class="whatsapp-btn">了解詳情</a>
+      </div>
+    </div>
 
-    <section class="service-section">
-      <h2>IRR精算與財策應用</h2>
-      <div class="service-content">
-        <img src="assets/images/irr-calculator.jpg" alt="IRR計算機" class="service-image">
-        <div class="service-details">
-          <h3>智能IRR計算系統</h3>
-          <p>支持分紅險/增額壽/年金險多維度對比，提供敏感度測試功能。</p>
-          <ul>
-            <li>保單貸款利率計算</li>
-            <li>退休規劃模擬</li>
-            <li>稅務籌劃建議</li>
-          </ul>
-          <a href="#" class="btn-primary">開始計算</a>
-        </div>
+    <div class="service-item">
+      <div class="service-img">
+        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Education">
       </div>
-    </section>
-<section class="irr-calculator">
-  <h2>IRR 計算機</h2>
-  <div class="calculator-form">
-    <div class="input-group">
-      <label for="contribution-years">供款年期</label>
-      <input type="number" id="contribution-years" placeholder="例如：10" min="1">
+      <div class="service-info">
+        <h2>子女教育與風險管理</h2>
+        <p>為子女的未來奠定堅實基礎，並透過全面的保險保障體系，抵禦不可預見的風險挑戰。</p>
+        <ul class="service-features">
+          <li><i class="fas fa-check-circle"></i> 全球教育基金專項儲蓄</li>
+          <li><i class="fas fa-check-circle"></i> 全面醫療與重疾保障</li>
+          <li><i class="fas fa-check-circle"></i> 家庭支柱高額人壽保險</li>
+        </ul>
+        <a href="https://wa.me/85267188956" class="whatsapp-btn">了解詳情</a>
+      </div>
     </div>
-    <div class="input-group">
-      <label for="annual-investment">每年投入金額</label>
-      <input type="number" id="annual-investment" placeholder="例如：100000" min="0">
-    </div>
-    <div class="input-group">
-      <label for="return-years">回報年期</label>
-      <input type="number" id="return-years" placeholder="例如：5" min="1">
-    </div>
-    <div class="input-group">
-      <label for="total-return">總回報金額</label>
-      <input type="number" id="total-return" placeholder="例如：1500000" min="0">
-    </div>
-    <button class="btn-primary" onclick="calculateIRR()">計算 IRR</button>
-  </div>
-  <div class="calculator-result">
-    <h3>計算結果</h3>
-    <p>內部回報率 (IRR): <span id="irr-result">--</span>%</p>
-    <canvas id="irr-chart"></canvas>
-  </div>
-</section>
   </main>
 
-  <!-- 頁尾 -->
   <footer class="aia-footer">
-    <p>&copy; 2025 AIA 財富管理. 版權所有</p>
+    <div class="footer-links">
+      <a href="index.html">首頁</a>
+      <a href="about.html">關於我們</a>
+      <a href="services.html">服務範疇</a>
+    </div>
+    <p class="footer-copy" style="margin-top: 20px;">&copy; 2025 Fortune Wealth. 版權所有</p>
   </footer>
 
-  <!-- JavaScript -->
-  <script src="scripts/main.js"></script>
-  <script src="scripts/services.js"></script>
-  <script src="js/script.js" defer></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
