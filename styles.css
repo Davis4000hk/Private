@@ -725,3 +725,23 @@ dd {
 .video-background {
   background: url(https://davis4000hk.github.io/Private/IMG/Service.mp4)  center/cover;
 }
+
+/* 導航選單微調 - 確保手機端 WhatsApp 按鈕置中 */
+@media (max-width: 768px) {
+  .nav-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .mobile-cta {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .nav-cta.btn-primary {
+    margin-left: 0 !important; /* 覆蓋原始 margin-left: 50px */
+    display: inline-block;
+  }
+}
