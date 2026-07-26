@@ -167,6 +167,11 @@ html {
   box-shadow: 0 4px 14px rgba(197, 164, 126, 0.35);
 }
 
+/* 桌面端隱藏手機版 CTA */
+.mobile-cta {
+  display: none;
+}
+
 .nav-desktop-cta:hover {
   background: var(--secondary-color);
   transform: translateY(-2px);
@@ -185,9 +190,10 @@ html {
   text-decoration: none;
   font-weight: 600;
   transition: var(--transition);
-  margin-left: 50px;
   white-space: nowrap;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .nav-cta:hover {
@@ -238,18 +244,19 @@ html {
   }
 
   .mobile-cta {
+    display: flex;
     margin-top: auto;
     padding-top: 24px;
     border-top: 1px solid #eee;
     width: 100%;
-    display: flex;
     justify-content: center;
   }
 
-  .nav-cta.btn-primary {
+  .nav-cta {
     margin-left: 0;
     width: 100%;
     text-align: center;
+    justify-content: center;
   }
 
   /* 漢堡動畫 */
