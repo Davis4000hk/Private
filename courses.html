@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fortune Wealth 線上理財課程 - 稅務、退休、風險管理專業知識">
+  <meta name="description" content="Fortune Wealth 線上理財課程 - 稅務、退休、風險管理專業知識，由 CFP、MDRT 認證顧問親授">
   <meta name="theme-color" content="#C5A47E">
-  <title>線上課程 - Fortune Wealth</title>
+  <title>線上課程 - Fortune Wealth | 專業財富知識庫</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-courses.css">
 </head>
 <body>
   <!-- 導航欄 -->
@@ -45,46 +46,412 @@
   </header>
   <div class="nav-overlay" aria-hidden="true"></div>
 
-  <section class="courses-hero">
-    <h1>專業理財知識庫</h1>
-    <p>掌握財富密碼，從現在開始學習。</p>
+  <!-- 增強 Hero -->
+  <section class="courses-hero-new">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content-wrap">
+      <span class="hero-badge">Fortune Wealth Academy</span>
+      <h1>專業理財知識庫</h1>
+      <p>由 CFP、MDRT 認證顧問親授，掌握財富密碼，從現在開始學習。</p>
+      <div class="hero-cta-group">
+        <a href="#courses-list" class="hero-cta-primary">瀏覽課程</a>
+        <a href="https://wa.me/85267188956" class="hero-cta-secondary">
+          <i class="fab fa-whatsapp"></i> 免費試讀
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats-bar">
+      <div class="stat-item">
+        <span class="stat-number">12<span class="stat-suffix">+</span></span>
+        <span class="stat-label">專業課程</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">8,000<span class="stat-suffix">+</span></span>
+        <span class="stat-label">學員人數</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">4.9<span class="stat-suffix">/5</span></span>
+        <span class="stat-label">學員評分</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">50<span class="stat-suffix">+</span></span>
+        <span class="stat-label">教學影片</span>
+      </div>
+    </div>
   </section>
 
-  <section class="course-grid">
-    <article class="course-card fade-in">
-      <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="course-img" alt="稅務規劃課程" loading="lazy">
-      <div class="course-info">
-        <span class="course-tag">稅務策略</span>
-        <h3>個人稅務高效規劃指南</h3>
-        <p>深入淺出講解合法節稅技巧，守護您的每一分收入。</p>
-        <div class="course-price">HKD 1,280</div>
-        <a href="https://wa.me/85267188956" class="whatsapp-btn" style="width: 100%; text-align: center;">立即報名</a>
-      </div>
-    </article>
-
-    <article class="course-card fade-in">
-      <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="course-img" alt="退休規劃課程" loading="lazy">
-      <div class="course-info">
-        <span class="course-tag">退休規劃</span>
-        <h3>穩健退休：資產配置全攻略</h3>
-        <p>為您的金色年華提前佈局，實現財務自由。</p>
-        <div class="course-price">HKD 1,500</div>
-        <a href="https://wa.me/85267188956" class="whatsapp-btn" style="width: 100%; text-align: center;">立即報名</a>
-      </div>
-    </article>
-
-    <article class="course-card fade-in">
-      <img src="https://images.unsplash.com/photo-1454165833767-027ff33027ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" class="course-img" alt="風險管理課程" loading="lazy">
-      <div class="course-info">
-        <span class="course-tag">風險管理</span>
-        <h3>家庭保障體系構建課</h3>
-        <p>如何用最少的成本，換取最全面的風險保障。</p>
-        <div class="course-price">HKD 980</div>
-        <a href="https://wa.me/85267188956" class="whatsapp-btn" style="width: 100%; text-align: center;">立即報名</a>
-      </div>
-    </article>
+  <!-- 篩選 Tabs -->
+  <section class="filter-section">
+    <div class="filter-intro">
+      <span class="section-eyebrow">EXPLORE</span>
+      <h2 class="section-heading">選擇最適合您的課程</h2>
+      <p class="section-subheading">從入門到精通，每個階段都有專業指引</p>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">全部課程</button>
+      <button class="filter-tab" data-filter="tax">稅務策略</button>
+      <button class="filter-tab" data-filter="retirement">退休規劃</button>
+      <button class="filter-tab" data-filter="risk">風險管理</button>
+      <button class="filter-tab" data-filter="wealth">財富增值</button>
+    </div>
   </section>
 
+  <!-- 課程列表 -->
+  <section id="courses-list" class="courses-new">
+    <div class="courses-grid">
+
+      <!-- 精選課程 - 大卡片 -->
+      <article class="crs-card crs-featured" data-category="wealth">
+        <div class="crs-featured-badge">
+          <i class="fas fa-crown"></i> 編輯精選
+        </div>
+        <div class="crs-image">
+          <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=900&q=80" alt="全方位財富管理大師課程" loading="lazy">
+          <div class="crs-image-overlay"></div>
+        </div>
+        <div class="crs-body">
+          <div class="crs-meta-top">
+            <span class="crs-tag crs-tag-featured">綜合課程</span>
+            <div class="crs-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+              <span>4.9 (320)</span>
+            </div>
+          </div>
+          <h3>全方位財富管理大師課程</h3>
+          <p>從零開始，建立完整的財富管理知識體系。涵蓋稅務、退休、投資、保障四大範疇，由淺入深。</p>
+          <div class="crs-meta">
+            <span><i class="fas fa-clock"></i> 12 小時</span>
+            <span><i class="fas fa-signal"></i> 初至進階</span>
+            <span><i class="fas fa-infinity"></i> 永久觀看</span>
+          </div>
+          <div class="crs-price-row">
+            <div class="crs-price-block">
+              <span class="crs-price-old">HKD 3,800</span>
+              <span class="crs-price">HKD 2,280</span>
+              <span class="crs-discount">節省 40%</span>
+            </div>
+            <a href="https://wa.me/85267188956" class="crs-cta">
+              <i class="fas fa-shopping-cart"></i> 立即報名
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 稅務課程 -->
+      <article class="crs-card" data-category="tax">
+        <div class="crs-image">
+          <img src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=80" alt="個人稅務高效規劃指南" loading="lazy">
+          <div class="crs-image-overlay"></div>
+          <span class="crs-tag-floating">稅務策略</span>
+        </div>
+        <div class="crs-body">
+          <div class="crs-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>5.0 (186)</span>
+          </div>
+          <h3>個人稅務高效規劃指南</h3>
+          <p>深入淺出講解合法節稅技巧，守護您的每一分收入。包括個人稅、跨境稅、信託架構。</p>
+          <ul class="crs-features">
+            <li><i class="fas fa-check"></i> 香港個人稅完整解析</li>
+            <li><i class="fas fa-check"></i> 跨境稅務合規策略</li>
+            <li><i class="fas fa-check"></i> 12 個實戰案例</li>
+          </ul>
+          <div class="crs-meta">
+            <span><i class="fas fa-clock"></i> 6 小時</span>
+            <span><i class="fas fa-signal"></i> 初階</span>
+            <span><i class="fas fa-certificate"></i> 證書</span>
+          </div>
+          <div class="crs-price-row">
+            <span class="crs-price">HKD 1,280</span>
+            <a href="https://wa.me/85267188956" class="crs-link">了解更多 <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 退休規劃 -->
+      <article class="crs-card" data-category="retirement">
+        <div class="crs-image">
+          <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=80" alt="穩健退休：資產配置全攻略" loading="lazy">
+          <div class="crs-image-overlay"></div>
+          <span class="crs-tag-floating crs-tag-warm">退休規劃</span>
+        </div>
+        <div class="crs-body">
+          <div class="crs-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>4.8 (214)</span>
+          </div>
+          <h3>穩健退休：資產配置全攻略</h3>
+          <p>為您的金色年華提前佈局，實現財務自由。涵蓋年金、MPF、保本投資組合。</p>
+          <ul class="crs-features">
+            <li><i class="fas fa-check"></i> 退休成本精算</li>
+            <li><i class="fas fa-check"></i> MPF 優化策略</li>
+            <li><i class="fas fa-check"></i> 月領年金規劃</li>
+          </ul>
+          <div class="crs-meta">
+            <span><i class="fas fa-clock"></i> 8 小時</span>
+            <span><i class="fas fa-signal"></i> 中階</span>
+            <span><i class="fas fa-certificate"></i> 證書</span>
+          </div>
+          <div class="crs-price-row">
+            <span class="crs-price">HKD 1,500</span>
+            <a href="https://wa.me/85267188956" class="crs-link">了解更多 <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 風險管理 -->
+      <article class="crs-card" data-category="risk">
+        <div class="crs-image">
+          <img src="https://images.unsplash.com/photo-1454165833767-027ff33027ef?w=800&q=80" alt="家庭保障體系構建課" loading="lazy">
+          <div class="crs-image-overlay"></div>
+          <span class="crs-tag-floating crs-tag-cool">風險管理</span>
+        </div>
+        <div class="crs-body">
+          <div class="crs-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>5.0 (142)</span>
+          </div>
+          <h3>家庭保障體系構建課</h3>
+          <p>如何用最少的成本，換取最全面的風險保障。教您避開常見陷阱。</p>
+          <ul class="crs-features">
+            <li><i class="fas fa-check"></i> 重疾險完整攻略</li>
+            <li><i class="fas fa-check"></i> 人壽保險精算</li>
+            <li><i class="fas fa-check"></i> 醫療與意外保障</li>
+          </ul>
+          <div class="crs-meta">
+            <span><i class="fas fa-clock"></i> 5 小時</span>
+            <span><i class="fas fa-signal"></i> 初階</span>
+            <span><i class="fas fa-certificate"></i> 證書</span>
+          </div>
+          <div class="crs-price-row">
+            <span class="crs-price">HKD 980</span>
+            <a href="https://wa.me/85267188956" class="crs-link">了解更多 <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 投資入門 -->
+      <article class="crs-card" data-category="wealth">
+        <div class="crs-image">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a6a7d0d4f?w=800&q=80" alt="投資理財入門：從零開始學投資" loading="lazy">
+          <div class="crs-image-overlay"></div>
+          <span class="crs-tag-floating">財富增值</span>
+        </div>
+        <div class="crs-body">
+          <div class="crs-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <span>4.9 (98)</span>
+          </div>
+          <h3>投資理財入門：從零開始學投資</h3>
+          <p>股票、基金、ETF 一次搞懂，建立正確的投資心態與策略。</p>
+          <ul class="crs-features">
+            <li><i class="fas fa-check"></i> 投資基礎概念</li>
+            <li><i class="fas fa-check"></i> 風險與回報分析</li>
+            <li><i class="fas fa-check"></i> 組合配置示範</li>
+          </ul>
+          <div class="crs-meta">
+            <span><i class="fas fa-clock"></i> 7 小時</span>
+            <span><i class="fas fa-signal"></i> 入門</span>
+            <span><i class="fas fa-certificate"></i> 證書</span>
+          </div>
+          <div class="crs-price-row">
+            <span class="crs-price">HKD 1,180</span>
+            <a href="https://wa.me/85267188956" class="crs-link">了解更多 <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 家族傳承 -->
+      <article class="crs-card" data-category="tax">
+        <div class="crs-image">
+          <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80" alt="家族信託與財富傳承" loading="lazy">
+          <div class="crs-image-overlay"></div>
+          <span class="crs-tag-floating">傳承規劃</span>
+        </div>
+        <div class="crs-body">
+          <div class="crs-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>4.8 (76)</span>
+          </div>
+          <h3>家族信託與財富傳承</h3>
+          <p>建立百年家族的財富傳承機制，包括信託、遺囑、稅務規劃一站式指南。</p>
+          <ul class="crs-features">
+            <li><i class="fas fa-check"></i> 信託架構設計</li>
+            <li><i class="fas fa-check"></i> 遺產稅籌劃</li>
+            <li><i class="fas fa-check"></i> 案例深度解析</li>
+          </ul>
+          <div class="crs-meta">
+            <span><i class="fas fa-clock"></i> 10 小時</span>
+            <span><i class="fas fa-signal"></i> 高階</span>
+            <span><i class="fas fa-certificate"></i> 證書</span>
+          </div>
+          <div class="crs-price-row">
+            <span class="crs-price">HKD 2,180</span>
+            <a href="https://wa.me/85267188956" class="crs-link">了解更多 <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 學習路徑 -->
+  <section class="learning-path">
+    <div class="path-intro">
+      <span class="section-eyebrow">LEARNING PATH</span>
+      <h2 class="section-heading">循序漸進的學習路徑</h2>
+      <p class="section-subheading">由淺入深，建立完整的財富管理知識</p>
+    </div>
+    <div class="path-grid">
+      <div class="path-stage">
+        <div class="stage-num">L1</div>
+        <h4>入門基礎</h4>
+        <p>投資理財入門、稅務基礎概念</p>
+        <span class="stage-time">建議 1-2 個月</span>
+      </div>
+      <div class="path-arrow"><i class="fas fa-arrow-right"></i></div>
+      <div class="path-stage">
+        <div class="stage-num">L2</div>
+        <h4>專業進階</h4>
+        <p>個人稅務、家庭保障、退休規劃</p>
+        <span class="stage-time">建議 3-4 個月</span>
+      </div>
+      <div class="path-arrow"><i class="fas fa-arrow-right"></i></div>
+      <div class="path-stage">
+        <div class="stage-num">L3</div>
+        <h4>大師實戰</h4>
+        <p>全方位大師課程、家族信託傳承</p>
+        <span class="stage-time">建議 6 個月+</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 學員感言 -->
+  <section class="testimonial-section">
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+        <p>課程內容非常實用，特別是稅務規劃部分，讓我了解到原來有這麼多合法節稅的方法。導師講解清晰，案例豐富。</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">J</div>
+          <div>
+            <strong>Judy Lee</strong>
+            <span>市場總監 · 稅務策略課程學員</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+        <p>退休規劃課程改變了我對未來的看法。現在我有清晰的財務路線圖，可以放心規劃 30 年後的生活。</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div>
+            <strong>Marcus Wong</strong>
+            <span>工程師 · 退休規劃課程學員</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-mark"><i class="fas fa-quote-left"></i></div>
+        <p>從完全不懂保險，到現在能為家人配置完整保障。課程 CP 值超高，強烈推薦給所有想學習理財的人。</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">C</div>
+          <div>
+            <strong>Cherry Chan</strong>
+            <span>教師 · 風險管理課程學員</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常見問題 -->
+  <section class="faq-section">
+    <div class="faq-intro">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-heading">課程常見問題</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          <span>課程是直播還是錄影？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>所有課程均為錄影形式，您可以隨時隨地觀看，無限次重溫。購買後立即可觀看，無需等待開課日期。</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          <span>有沒有退款機制？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>我們提供 7 天無條件退款。如果您購買後覺得不適合，只需在 7 天內聯絡客服即可全額退款。</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          <span>課程是否有證書？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>完成所有課程模組後，您將獲得由 Fortune Wealth Academy 頒發的電子證書，可用於 LinkedIn 等專業平台展示。</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          <span>能否與顧問 1 對 1 諮詢？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>購買「大師課程」的學員，可獲得 30 分鐘 1 對 1 諮詢時段。其他課程學員亦可透過 WhatsApp 與顧問交流。</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          <span>可以分期付款嗎？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>HKD 2,000 以上的課程支援分期付款，請透過 WhatsApp 聯絡客服了解詳情。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 行動呼籲 -->
+  <section class="cta">
+    <h2>開始您的財富學習之旅</h2>
+    <p>選擇最適合您的課程，由專業顧問帶領您走向財務自由。</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/85267188956" class="hero-cta">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp 報名
+      </a>
+      <a href="https://cal.com/fortunewealth/airside" target="_blank" rel="noopener" class="cta-secondary-btn">
+        <i class="fas fa-headset" aria-hidden="true"></i> 免費諮詢
+      </a>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
   <footer class="aia-footer">
     <div class="footer-content">
       <div class="footer-logo">
@@ -106,5 +473,6 @@
   </footer>
 
   <script src="js/script.js" defer></script>
+  <script src="js/courses.js" defer></script>
 </body>
 </html>
