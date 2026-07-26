@@ -3,124 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fortune Wealth PRIVATE 專家團隊 - CFP、MDRT 認證理財顧問">
+  <meta name="theme-color" content="#C5A47E">
   <title>PRIVATE 團隊 - Fortune Wealth</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <style>
-    .team-hero {
-      padding: 150px 20px 80px;
-      background: linear-gradient(45deg, #1a1a1a, #333);
-      color: white;
-      text-align: center;
-    }
-    .team-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .team-member {
-      text-align: center;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-    .member-img {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 20px;
-      border: 5px solid #f4f1ea;
-    }
-    .member-role {
-      color: var(--primary-color);
-      font-weight: bold;
-      margin-bottom: 10px;
-      display: block;
-    }
-    .member-certs {
-      font-size: 0.9rem;
-      color: var(--gray);
-      margin-top: 10px;
-    }
-  </style>
 </head>
 <body>
-  
-  <!-- 導航欄 -->
-  
   <!-- 導航欄 -->
   <header class="aia-header">
     <nav class="aia-nav">
-      <!-- Logo -->
-      <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo" class="nav-logo" loading="lazy">
-      
-      <!-- 漢堡選單按鈕 -->
-      <button class="hamburger" aria-label="Toggle navigation">
+      <a href="index.html">
+        <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo" class="nav-logo" loading="lazy">
+      </a>
+      <button class="hamburger" aria-label="開啟導航選單" aria-expanded="false">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
-
-      <!-- 導航連結 -->
       <ul class="nav-list">
         <li><a href="index.html">首頁</a></li>
         <li><a href="about.html">關於我們</a></li>
         <li><a href="services.html">服務範疇</a></li>
         <li><a href="courses.html">線上課程</a></li>
         <li><a href="shop.html">商店</a></li>
-        <li><a href="team.html">PRIVATE 團隊</a></li>
-        
-        <!-- 手機端顯示的按鈕 -->
+        <li><a href="team.html" class="active">PRIVATE 團隊</a></li>
         <li class="mobile-cta">
-          <a href="https://wa.me/85267188956" class="nav-cta btn-primary">立即 WhatsApp</a>
+          <a href="https://wa.me/85267188956" class="nav-cta">
+            <i class="fab fa-whatsapp"></i> 立即 WhatsApp
+          </a>
         </li>
       </ul>
-      
-      <!-- 桌面端顯示的按鈕 -->
-      <a href="https://wa.me/85267188956" class="nav-desktop-cta"></a>
+      <a href="https://wa.me/85267188956" class="nav-desktop-cta" aria-label="WhatsApp 聯絡我們">
+        <i class="fab fa-whatsapp"></i>
+        <span>立即 WhatsApp</span>
+      </a>
     </nav>
   </header>
-
-
+  <div class="nav-overlay" aria-hidden="true"></div>
 
   <section class="team-hero">
-    <h1 style="font-family: var(--font-primary); font-size: 3rem;">PRIVATE 專家團隊</h1>
+    <h1>PRIVATE 專家團隊</h1>
     <p>匯聚頂尖精英，為您的財富保駕護航。</p>
   </section>
 
   <section class="team-grid">
-    <div class="team-member">
-      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="Founder">
+    <article class="team-member fade-in">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="Davis Li" loading="lazy">
       <h3>Davis Li</h3>
-      <span class="member-role">創始人 & 高級理財顧問</span>
+      <span class="member-role">創始人 &amp; 高級理財顧問</span>
       <p>擁有超過 10 年財富管理經驗，專注於高端客戶的資產配置與傳承。</p>
       <div class="member-certs">MDRT TOT | CFP | RFC</div>
-    </div>
-    <div class="team-member">
-      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="Advisor">
+    </article>
+
+    <article class="team-member fade-in">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="Sarah Wong" loading="lazy">
       <h3>Sarah Wong</h3>
       <span class="member-role">稅務規劃專家</span>
       <p>擅長國際稅務籌劃與跨境資產合規管理。</p>
       <div class="member-certs">CPA | CFP</div>
-    </div>
-    <div class="team-member">
-      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="Advisor">
+    </article>
+
+    <article class="team-member fade-in">
+      <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" class="member-img" alt="James Chen" loading="lazy">
       <h3>James Chen</h3>
       <span class="member-role">風險管理總監</span>
       <p>致力於為家庭與企業構建全方位的風險防護網。</p>
       <div class="member-certs">CHRP | FLMI</div>
-    </div>
+    </article>
   </section>
 
   <footer class="aia-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="https://s3.ca-central-1.amazonaws.com/logojoy/logos/214831894/noBgBlack.png" alt="AIA Logo" loading="lazy">
+      </div>
+      <nav class="footer-links" aria-label="頁尾導航">
+        <a href="index.html">首頁</a>
+        <a href="about.html">關於我們</a>
+        <a href="term.html">服務條款</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/85267188956" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
     <p class="footer-copy">&copy; 2025 Fortune Wealth. 版權所有</p>
   </footer>
-  <script src="js/script.js"></script>
+
+  <script src="js/script.js" defer></script>
 </body>
 </html>
