@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Fortune Wealth 全方位理財解決方案 - 稅務規劃、退休策劃、風險管理">
+  <meta name="description" content="Fortune Wealth 全方位理財解決方案 - 稅務規劃、退休策劃、家族傳承、風險管理，提供專業一站式財富管理服務">
   <meta name="theme-color" content="#C5A47E">
-  <title>服務範疇 - Fortune Wealth</title>
+  <title>服務範疇 - Fortune Wealth | 專業財富管理</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@600;700&family=Playfair+Display:wght@700&family=Roboto:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles-services.css">
 </head>
 <body>
   <!-- 導航欄 -->
@@ -45,61 +46,292 @@
   </header>
   <div class="nav-overlay" aria-hidden="true"></div>
 
-  <section class="services-hero">
-    <h1>全方位理財解決方案</h1>
-    <p>專業、精準、可靠，為您的每一分財富增值。</p>
+  <!-- 增強 Hero -->
+  <section class="services-hero-new">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content-wrap">
+      <span class="hero-badge">Fortune Wealth 專業服務</span>
+      <h1>全方位理財解決方案</h1>
+      <p>從稅務規劃到家族傳承，由專業顧問為您度身訂造，守護每一分財富。</p>
+      <div class="hero-cta-group">
+        <a href="#services-list" class="hero-cta-primary">瀏覽服務</a>
+        <a href="https://wa.me/85267188956" class="hero-cta-secondary">
+          <i class="fab fa-whatsapp"></i> 免費諮詢
+        </a>
+      </div>
+    </div>
+    <div class="hero-stats-bar">
+      <div class="stat-item">
+        <span class="stat-number">5000<span class="stat-suffix">+</span></span>
+        <span class="stat-label">服務客戶</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">HKD 50<span class="stat-suffix">億</span></span>
+        <span class="stat-label">管理資產</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">15<span class="stat-suffix">+</span></span>
+        <span class="stat-label">年專業經驗</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">99<span class="stat-suffix">%</span></span>
+        <span class="stat-label">客戶滿意度</span>
+      </div>
+    </div>
   </section>
 
-  <main class="service-section">
-    <article class="service-item fade-in">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="稅務規劃服務" loading="lazy">
-      </div>
-      <div class="service-info">
-        <h2>稅務高效規劃</h2>
-        <p>運用國際化視野與專業知識，為您量身定制稅務優化方案，合法合規地最大化您的資產價值。</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 全球資產稅務合規諮詢</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 企業與個人稅務負擔優化</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 跨境稅務策略規劃</li>
-        </ul>
-        <a href="https://wa.me/85267188956" class="whatsapp-btn">了解詳情</a>
-      </div>
-    </article>
+  <!-- 服務列表 -->
+  <section id="services-list" class="services-new">
+    <div class="services-intro">
+      <span class="section-eyebrow">OUR SERVICES</span>
+      <h2 class="section-heading">四大核心服務範疇</h2>
+      <p class="section-subheading">結合國際視野與本地專業，為您每一個人生階段提供最合適的財富方案</p>
+    </div>
 
-    <article class="service-item fade-in">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="退休金與傳承規劃" loading="lazy">
-      </div>
-      <div class="service-info">
-        <h2>退休金與傳承規劃</h2>
-        <p>確保您在享受金色年華的同時，資產能夠安全、有序地傳承給下一代，延續家族財富與榮耀。</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 退休生活成本精確預估</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 家族信託與遺囑安排</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 多元化退休投資組合</li>
-        </ul>
-        <a href="https://wa.me/85267188956" class="whatsapp-btn">了解詳情</a>
-      </div>
-    </article>
+    <div class="service-cards-grid">
+      <article class="srv-card">
+        <div class="srv-image">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="稅務規劃" loading="lazy">
+          <div class="srv-image-overlay"></div>
+          <div class="srv-number">01</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon"><i class="fas fa-calculator" aria-hidden="true"></i></div>
+          <h3>稅務高效規劃</h3>
+          <p>合法節稅，運用國際化視野為您度身訂造最優方案，守護您的每一分資產。</p>
+          <ul class="srv-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> 全球資產稅務合規</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 跨境稅務策略</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 企業與個人節稅</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 信託架構設計</li>
+          </ul>
+          <a href="https://wa.me/85267188956" class="srv-link">了解稅務規劃 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
 
-    <article class="service-item fade-in">
-      <div class="service-img">
-        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="教育與風險管理" loading="lazy">
-      </div>
-      <div class="service-info">
-        <h2>子女教育與風險管理</h2>
-        <p>為子女的未來奠定堅實基礎，並透過全面的保險保障體系，抵禦不可預見的風險挑戰。</p>
-        <ul class="service-features">
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 全球教育基金專項儲蓄</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 全面醫療與重疾保障</li>
-          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 家庭支柱高額人壽保險</li>
-        </ul>
-        <a href="https://wa.me/85267188956" class="whatsapp-btn">了解詳情</a>
-      </div>
-    </article>
-  </main>
+      <article class="srv-card">
+        <div class="srv-image">
+          <img src="https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?w=800&q=80" alt="退休規劃" loading="lazy">
+          <div class="srv-image-overlay"></div>
+          <div class="srv-number">02</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon"><i class="fas fa-umbrella-beach" aria-hidden="true"></i></div>
+          <h3>退休與傳承規劃</h3>
+          <p>從今天開始，為金色年華鋪路，確保財富安全有序傳承予下一代。</p>
+          <ul class="srv-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> 退休生活成本預估</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 多元化投資組合</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 家族信託安排</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 遺囑與遺產規劃</li>
+          </ul>
+          <a href="https://wa.me/85267188956" class="srv-link">了解退休規劃 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
 
+      <article class="srv-card">
+        <div class="srv-image">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80" alt="教育基金" loading="lazy">
+          <div class="srv-image-overlay"></div>
+          <div class="srv-number">03</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon"><i class="fas fa-graduation-cap" aria-hidden="true"></i></div>
+          <h3>子女教育基金</h3>
+          <p>為子女的未來奠定穩固基礎，確保他們能無憂追逐夢想。</p>
+          <ul class="srv-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> 全球升學儲蓄計劃</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 教育基金信託</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 投資相連保險</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 升學路徑諮詢</li>
+          </ul>
+          <a href="https://wa.me/85267188956" class="srv-link">了解教育基金 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+
+      <article class="srv-card">
+        <div class="srv-image">
+          <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80" alt="風險管理" loading="lazy">
+          <div class="srv-image-overlay"></div>
+          <div class="srv-number">04</div>
+        </div>
+        <div class="srv-body">
+          <div class="srv-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+          <h3>全方位風險管理</h3>
+          <p>用最少的成本，換取最全面的保障，守護您與摯愛的未來。</p>
+          <ul class="srv-features">
+            <li><i class="fas fa-check" aria-hidden="true"></i> 家庭醫療與重疾保障</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 人壽保險規劃</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 意外與傷殘保障</li>
+            <li><i class="fas fa-check" aria-hidden="true"></i> 資產保護策略</li>
+          </ul>
+          <a href="https://wa.me/85267188956" class="srv-link">了解風險管理 <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 我們的流程 -->
+  <section class="process-section">
+    <div class="process-intro">
+      <span class="section-eyebrow">OUR PROCESS</span>
+      <h2 class="section-heading">四步打造您的財富藍圖</h2>
+      <p class="section-subheading">透明、專業、高效的服務流程</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-circle">
+          <span class="step-num">01</span>
+          <i class="fas fa-comments" aria-hidden="true"></i>
+        </div>
+        <h4>初步諮詢</h4>
+        <p>免費 30 分鐘，了解您的需求與目標</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right" aria-hidden="true"></i></div>
+      <div class="process-step">
+        <div class="step-circle">
+          <span class="step-num">02</span>
+          <i class="fas fa-chart-pie" aria-hidden="true"></i>
+        </div>
+        <h4>深度分析</h4>
+        <p>全面審視財務狀況，識別風險與機會</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right" aria-hidden="true"></i></div>
+      <div class="process-step">
+        <div class="step-circle">
+          <span class="step-num">03</span>
+          <i class="fas fa-file-signature" aria-hidden="true"></i>
+        </div>
+        <h4>方案定制</h4>
+        <p>度身訂造財富策略，清晰透明的建議</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right" aria-hidden="true"></i></div>
+      <div class="process-step">
+        <div class="step-circle">
+          <span class="step-num">04</span>
+          <i class="fas fa-handshake" aria-hidden="true"></i>
+        </div>
+        <h4>持續跟進</h4>
+        <p>定期檢視與調整，與您一同成長</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 為何選擇我們 -->
+  <section class="why-section">
+    <div class="why-intro">
+      <span class="section-eyebrow">WHY CHOOSE US</span>
+      <h2 class="section-heading">為何選擇 Fortune Wealth</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-award" aria-hidden="true"></i></div>
+        <h3>國際認證團隊</h3>
+        <p>全體顧問持有 CFP、MDRT、RFC 等國際認可資質</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-globe-asia" aria-hidden="true"></i></div>
+        <h3>全球化視野</h3>
+        <p>熟悉亞太區金融市場，提供跨境資產配置建議</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div>
+        <h3>一對一專屬</h3>
+        <p>每位客戶配備專屬顧問，深度了解您的需求</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+        <h3>絕對保密</h3>
+        <p>嚴格的私隱保護機制，保障您的資產與資料安全</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-balance-scale" aria-hidden="true"></i></div>
+        <h3>獨立中立</h3>
+        <p>不受單一機構約束，提供最客觀的產品建議</p>
+      </div>
+      <div class="why-item">
+        <div class="why-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
+        <h3>全年無休支援</h3>
+        <p>WhatsApp 全天候即時回覆，緊急情況隨時聯絡</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 客戶感言 -->
+  <section class="testimonial-section">
+    <div class="testimonial-quote">
+      <i class="fas fa-quote-left quote-mark" aria-hidden="true"></i>
+      <p>Fortune Wealth 團隊的專業程度令我印象深刻。從稅務規劃到退休安排，每一個細節都處理得非常細緻，讓我對未來的財富傳承充滿信心。</p>
+      <div class="quote-author">
+        <strong>陳先生</strong>
+        <span>上市公司執行董事 · 客戶 8 年</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 常見問題 -->
+  <section class="faq-section">
+    <div class="faq-intro">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-heading">常見問題</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>
+          <span>首次諮詢是否收費？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>首次 30 分鐘諮詢完全免費，讓我們先了解您的需求，再決定是否進一步合作。</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          <span>你們提供哪些地區的服務？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>我們主要服務香港客戶，同時為中國大陸、東南亞及海外華人提供跨境財富管理建議。</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          <span>服務收費如何計算？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>收費結構透明，主要按服務類型與複雜度而定。詳細報價會在初步諮詢後提供，所有費用均會事先知會並獲客戶同意。</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          <span>需要準備什麼文件？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>首次諮詢只需簡單介紹背景。深入分析階段，我們會提供詳細的文件清單，包括資產證明、收入證明等。</p>
+      </details>
+      <details class="faq-item">
+        <summary>
+          <span>如何確保資料私隱？</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </summary>
+        <p>我們遵循最嚴格的私隱保護標準，所有資料均加密儲存，僅授權顧問可查閱，絕不外洩。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- 行動呼籲 -->
+  <section class="cta">
+    <h2>準備好開始您的財富之旅？</h2>
+    <p>立即預約免費諮詢，讓專業顧問為您分析現狀，制定最適合的方案。</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/85267188956" class="hero-cta">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp 預約
+      </a>
+      <a href="https://cal.com/fortunewealth/airside" target="_blank" rel="noopener" class="cta-secondary-btn">
+        <i class="fas fa-calendar-alt" aria-hidden="true"></i> 線上預約
+      </a>
+    </div>
+  </section>
+
+  <!-- 頁尾 -->
   <footer class="aia-footer">
     <div class="footer-content">
       <div class="footer-logo">
@@ -108,6 +340,7 @@
       <nav class="footer-links" aria-label="頁尾導航">
         <a href="index.html">首頁</a>
         <a href="about.html">關於我們</a>
+        <a href="services.html">服務範疇</a>
         <a href="term.html">服務條款</a>
       </nav>
       <div class="footer-social">
